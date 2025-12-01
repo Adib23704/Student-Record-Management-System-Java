@@ -73,6 +73,16 @@ public class MainController {
         return;
       }
 
+      if (marks < 0 || marks > 100) {
+        showAlert("Error", "Marks must be between 0 and 100.");
+        return;
+      }
+
+      if (cgpa < 0 || cgpa > 4) {
+        showAlert("Error", "CGPA must be between 0 and 4.");
+        return;
+      }
+
       int rollNumber = 1000 + random.nextInt(9000);
 
       Student newStudent = new Student(name, rollNumber, course, marks, cgpa);
